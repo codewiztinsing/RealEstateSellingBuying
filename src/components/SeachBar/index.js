@@ -1,4 +1,4 @@
-
+import { Searchbar } from 'react-native-paper';
 import { Picker } from '@react-native-picker/picker';
 import {useState} from 'react';
 import {
@@ -15,7 +15,6 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import Icon from "react-native-vector-icons/MaterialCommunityIcons";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
-import CustomPicker from '../Picker';
 import { useNavigation } from '@react-navigation/native';
 
 const SearchBar = ({clicked, searchPhrase, setSearchPhrase, setClicked,navigation}) => {
@@ -23,7 +22,7 @@ const SearchBar = ({clicked, searchPhrase, setSearchPhrase, setClicked,navigatio
   return (
   
       <View style={styles.container}>
-     {/* bar */}
+
         <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
         <FontAwesome
             name="bars"
@@ -34,7 +33,7 @@ const SearchBar = ({clicked, searchPhrase, setSearchPhrase, setClicked,navigatio
 
         </TouchableOpacity>
        
-          {/* Input field */}
+     
 
           <TouchableOpacity style={styles.input} onPress = {() => {
             navigation.navigate("Search")
@@ -51,9 +50,7 @@ const SearchBar = ({clicked, searchPhrase, setSearchPhrase, setClicked,navigatio
           
           />
       </TouchableOpacity>
-      
-  
-  {/* 10.0.3.2 */}
+
     </View>
   );
 };

@@ -195,7 +195,7 @@ const {domain,setIsLoggedIn,setToken,setuserObj} = globalContext
                     <ExtraView>
                   <ExtraText>
                   Reset Account
-                    <TextLink onPress={() => navigation.replace('PasswordReset')}>
+                    <TextLink onPress={() => navigation.push('PasswordReset')}>
                       <TextLinkContent>click here</TextLinkContent>
                     </TextLink>
                   </ExtraText>

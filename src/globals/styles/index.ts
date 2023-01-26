@@ -8,7 +8,9 @@ import {
     TouchableOpacity,
     Dimensions
   } from 'react-native';
-  
+
+
+
   import styled from 'styled-components';
   
   const statusBarHeight = 10;

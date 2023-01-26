@@ -1,12 +1,24 @@
 import { StyleSheet, Text, View } from 'react-native'
-import React from 'react'
+import { WebView } from 'react-native-webview';
+import React, { useContext, useLayoutEffect, useState } from 'react'
+import { Context } from '../../globals/variables';
+import axios from 'axios';
 
 export default function PasswordReset() {
-  return (
-    <View>
-      <Text>PasswordReset</Text>
-    </View>
-  )
+    const globalContext = useContext(Context);
+    const {domain, setIsLoggedIn, setGlobalProducts} = globalContext;
+  
+
+  return <WebView
+      style={styles.container}
+      originWhitelist={['*']}
+      source={{ uri: `${domain}api/v1/accounts/reset_password/` }}
+    />
+  
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+    container:{
+
+    }
+})
