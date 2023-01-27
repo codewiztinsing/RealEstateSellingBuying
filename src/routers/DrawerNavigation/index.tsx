@@ -1,11 +1,11 @@
 import React, { useState } from "react";
-
 import { createDrawerNavigator } from "@react-navigation/drawer";
 import BottomTabNavigator from "../BottomNavigation";
 import DrawerContent from "./DrawerContent";
 import { Text, View } from "react-native";
 import AuthStack from "../AuthStack";
 import HomeStack from "../HomeStack";
+import OrderStack from "../OrderStack";
 
 
 const Drawer = createDrawerNavigator();
@@ -27,7 +27,7 @@ const DrawerNavigator = ({navigation}) => {
         header:({navigation}) => {<></>}
           }
         }
-      name="Main"  component={HomeStack} />
+      name="HomeStack"  component={HomeStack} />
       <Drawer.Screen 
       
       options={{
@@ -40,7 +40,7 @@ const DrawerNavigator = ({navigation}) => {
         headerShown:false
       }}
       
-      name="Listing" component={HomeStack} />
+      name="OrderStack" component={OrderStack} />
     </Drawer.Navigator>
   );
 }

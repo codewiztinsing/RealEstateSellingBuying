@@ -1,12 +1,12 @@
 import {View, Text, StyleSheet, ScrollView, Pressable} from 'react-native';
-import { Card ,H4,Carousel} from 'nachos-ui'
+import {Card, H4, Carousel} from 'nachos-ui';
 import React, {useContext, useEffect, useState} from 'react';
 import styles from './styles';
 import {useNavigation, useNavigationState} from '@react-navigation/native';
 import {useRoute} from '@react-navigation/native';
 import axios from 'axios';
 import {TouchableOpacity} from 'react-native-gesture-handler';
-import { Context } from '../../globals/variables';
+import {Context} from '../../globals/variables';
 import ImageCarousel from '../../components/ImageCarousel';
 import HorizontalFlatList from '../../components/HorizontalFlatList';
 
@@ -60,7 +60,10 @@ const ProductScreen = () => {
           <TouchableOpacity
             style={styles.orderButton}
             onPress={() => {
-              navigation.navigate('Order', {listing: item});
+              navigation.navigate('OrderStack', {
+                screen: 'CreateOrder',
+                params: {listing: item},
+              });
             }}>
             <Text style={styles.orderText}>Order Now</Text>
           </TouchableOpacity>
@@ -68,7 +71,7 @@ const ProductScreen = () => {
           <TouchableOpacity
             style={styles.orderButton}
             onPress={() => {
-              navigation.navigate('_Login', {listing: item});
+              navigation.navigate('Login', {listing: item});
             }}>
             <Text style={styles.orderText}>Login to order</Text>
           </TouchableOpacity>
@@ -77,9 +80,6 @@ const ProductScreen = () => {
 
       {/* image carousel to show list of house images */}
       <ImageCarousel images={item.images} />
-   
-
-
 
       <View style={styles.info}>
         <View style={styles.left}>

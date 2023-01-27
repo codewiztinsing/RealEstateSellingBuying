@@ -8,6 +8,7 @@ import {Provider} from './src/globals/variables';
 
 import BottomBar from './src/routers/BottomNavigation';
 import Listing from './src/screens/ListingScreen';
+import DrawerNavigator from './src/routers/DrawerNavigation';
 
 
 
@@ -16,7 +17,7 @@ const App = () => {
     
       <Provider>
         <NavigationContainer>
-          <Listing />
+          <DrawerNavigator />
         </NavigationContainer>
       </Provider>
    
