@@ -6,6 +6,17 @@ const styles = StyleSheet.create({
       flex:1
 
     },
+    showrelatedbtn:{
+      width:120,
+      height:35,
+      marginBottom:20,
+      borderRadius:20,
+      backgroundColor:"pink",
+      justifyContent:"center",
+      alignContent:"center",
+      alignItems:"center"
+    },
+
     topBar:{
       flexDirection:"row",
       justifyContent:"space-around"

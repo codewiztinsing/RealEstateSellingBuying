@@ -220,21 +220,23 @@ const Input = ({
   ...props
 }) => {
   return (
-    <ScrollView>
+    <View>
       <LeftIcon>
         <Entypo name={icon} size={20} color={Colors.brand} />
       </LeftIcon>
 
-      <StyledInputLabel>{label}</StyledInputLabel>
 
       <StyledTextInput {...props} />
+
+
+
       {error ? <StyledInputLabel error={true}>{error}</StyledInputLabel> : null}
       {isPassword && (
         <RightIcon onPress={() => setHidePassword(!hidePassword)}>
           <Entypo name={hidePassword ? 'eye-with-line' : 'eye'} size={20} />
         </RightIcon>
       )}
-    </ScrollView>
+    </View>
   );
 };
 

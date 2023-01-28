@@ -37,7 +37,7 @@ export default function DrawerContent(props) {
             )}
             label="Send Listing"
             onPress={() => {
-              props.navigation.navigate('HomeStack', { screen: 'Listing' });;
+              props.navigation.navigate('HomeStack', {screen: 'Listing'});
             }}
           />
           <DrawerItem

@@ -113,38 +113,15 @@ const ProductScreen = () => {
       {/* <Text>Show related house </Text> */}
 
       <View>
-        <HorizontalFlatList
-          products={relatedListings}
-          SECTIONS={[
-            {
-              title: 'Related house',
-              horizontal: true,
-              data: [
-                {
-                  key: '1',
-                  text: 'Item text 1',
-                },
-                {
-                  key: '2',
-                  text: 'Item text 2',
-                },
-
-                {
-                  key: '3',
-                  text: 'Item text 3',
-                },
-                {
-                  key: '4',
-                  text: 'Item text 4',
-                },
-                {
-                  key: '5',
-                  text: 'Item text 5',
-                },
-              ],
-            },
-          ]}
-        />
+        <TouchableOpacity
+          style={styles.showrelatedbtn}
+          onPress={() => {
+            navigation.navigate('RelatedProduct',{
+              relatedListings:relatedListings
+            });
+          }}>
+          <Text>Show related products</Text>
+        </TouchableOpacity>
       </View>
     </ScrollView>
   );

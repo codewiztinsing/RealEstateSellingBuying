@@ -21,6 +21,17 @@ const DrawerNavigator = ({navigation}) => {
       
 
     }} drawerContent={(prosp) => <DrawerContent {...prosp}/>}>
+
+
+<Drawer.Screen  
+      options={{
+   
+        header:({navigation}) => {<></>}
+          }
+        }
+      name="BottomTab"  component={BottomTabNavigator} />
+
+
       <Drawer.Screen  
       options={{
    

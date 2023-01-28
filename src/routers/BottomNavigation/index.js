@@ -1,38 +1,50 @@
-import * as React from 'react';
-import { BottomNavigation, Text } from 'react-native-paper';
+import {StyleSheet, Text, View} from 'react-native';
+import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import React, {useContext, useState} from 'react';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Payment from '../../screens/PaymentScreen';
+import OrderScreen from '../../screens/OrderScreen';
+import { Context } from '../../globals/variables';
 import HomeStack from '../HomeStack';
 
-const HomeRoute = () => <HomeStack />
 
-const AlbumsRoute = () => <Text>Albums</Text>;
 
-const RecentsRoute = () => <Text>Recents</Text>;
+const Tab = createBottomTabNavigator();
 
-const NotificationsRoute = () => <Text>Notifications</Text>;
-
-const BottomBar = () => {
-  const [index, setIndex] = React.useState(0);
-  const [routes] = React.useState([
-    { key: 'home', title: 'Home', focusedIcon: 'heart', unfocusedIcon: 'heart-outline'},
-    { key: 'albums', title: 'Albums', focusedIcon: 'album' },
-    { key: 'recents', title: 'Recents', focusedIcon: 'history' },
-    { key: 'notifications', title: 'Notifications', focusedIcon: 'bell', unfocusedIcon: 'bell-outline' },
-  ]);
-
-  const renderScene = BottomNavigation.SceneMap({
-    home: HomeRoute,
-    albums: AlbumsRoute,
-    recents: RecentsRoute,
-    notifications: NotificationsRoute,
-  });
-
+const BottomTabNavigator = () => {
+  const globalContext = useContext(Context);
+  const {isLoggedIn} = globalContext;
   return (
-    <BottomNavigation
-      navigationState={{ index, routes }}
-      onIndexChange={setIndex}
-      renderScene={renderScene}
-    />
+    <Tab.Navigator screenOptions={() => ({tabBarShowLabel: false})}>
+  
+          <Tab.Screen
+          name="HomeStack"
+          component={HomeStack}
+          options={{
+            tabBarLabel: 'Profile screen',
+            headerShown: false,
+            tabBarIcon: ({color, size}) => (
+              <MaterialCommunityIcons name="home" color={color} size={size} />
+            ),
+          }}
+        />
+   
+   
+    <Tab.Screen
+            name="Order"
+            component={OrderScreen}
+            options={{
+              tabBarLabel: 'Profile screen',
+              headerShown: false,
+              tabBarIcon: ({color, size}) => (
+                <MaterialCommunityIcons name="phone-alert" color={color} size={size} />
+              ),
+            }}
+          />
+
+    
+    </Tab.Navigator>
   );
 };
 
-export default BottomBar;
+export default BottomTabNavigator;
