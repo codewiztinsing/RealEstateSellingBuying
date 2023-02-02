@@ -27,7 +27,9 @@ export default function DrawerContent(props) {
             )}
             label="Login"
             onPress={() => {
-              props.navigation.navigate('Login');
+              props.navigation.navigate('Authorization',{
+                screen:"Login"
+              });
             }}
           />
 
@@ -78,7 +80,9 @@ export default function DrawerContent(props) {
           onPress={() => {
             setIsLoggedIn(false);
             setToken('');
-            navigation.navigate('Login');
+            navigation.navigate('Authorization',{
+              screen:"Login"
+            });
           }}
         />
       </Drawer.Section>

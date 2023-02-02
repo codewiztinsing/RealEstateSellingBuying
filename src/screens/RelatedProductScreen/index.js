@@ -47,6 +47,3 @@ export default function RelatedProductScreen() {
   )
 }
 
-
-
-    {/* <Text>Show related house </Text> */}

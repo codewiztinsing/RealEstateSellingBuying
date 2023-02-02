@@ -10,10 +10,11 @@ import {
 import axios from 'axios';
 import {Context} from '../../globals/variables';
 import WebView from 'react-native-webview';
-import { useNavigation } from '@react-navigation/native';
+import {useNavigation} from '@react-navigation/native';
 
 function OrderCard({item}) {
-   const navigation =  useNavigation()
+
+  const navigation = useNavigation();
   const LeftContent = props => <Avatar.Icon {...props} icon="home" />;
   return (
     <View>
@@ -34,15 +35,37 @@ function OrderCard({item}) {
         {/* <Card.Cover source={{uri: 'https://picsum.photos/700'}} /> */}
         <Card.Actions>
           <Button
-          onPress={() => {
-            console.log('cancel button is pressed')
-        }}
-          >Cancel</Button>
+             onPress={() => {
+              navigation.navigate('OrderStack', {
+                screen: 'UpdateOrder',
+                params: {
+                  item:item
+                },
+              });
+            }}>
+            Update
+          </Button>
 
+          <Button
+            onPress={() => {
+              navigation.goBack();
+            }}>
+            Cancel
+          </Button>
 
-          <Button onPress={() => {
-           navigation.navigate("Payment")
-          }}>Pay with yenepay</Button>
+          <Button
+            onPress={() => {
+              navigation.navigate('OrderStack', {
+                screen: 'Payment',
+                initial: false,
+              });
+            }}>
+            Pay with yenepay
+          </Button>
+
+        
+
+    
         </Card.Actions>
       </Card>
     </View>

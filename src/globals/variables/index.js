@@ -12,10 +12,13 @@ const Provider = ({children}) => {
   const [userObj, setuserObj] = useState({});
   const [globalProducts, setGlobalProducts] = useState([]);
   const [orders, setOrders] = useState([]);
+  const [globalRelatedListings, setGlabalRelatedListings] = useState([]);
 
 
   const globalContext = {
     domain,
+    setGlabalRelatedListings,
+    globalRelatedListings,
     isLoggedIn,
     setIsLoggedIn,
     token,

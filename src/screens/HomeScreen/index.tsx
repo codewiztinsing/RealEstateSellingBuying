@@ -86,8 +86,22 @@ function HomeScreen() {
         }}
       />
 
+      <Text style={styles.title}>Near by you</Text>
       <FlatList
         showsVerticalScrollIndicator={false}
+        showsHorizontalScrollIndicator={false}
+        horizontal={true}
+        data={__products}
+        refreshing={refreshing}
+        onRefresh={() => setOnRefresh(true)}
+        keyExtractor={item => `${item.slug} ${item.id} ${Math.random()} `}
+        renderItem={({item}) => <ProductItem item={item} />}
+      />
+
+      <Text style={styles.title}>Featured </Text>
+      <FlatList
+        showsVerticalScrollIndicator={false}
+        horizontal={true}
         data={__products}
         refreshing={refreshing}
         onRefresh={() => setOnRefresh(true)}
@@ -102,17 +116,25 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   pages: {
     width: '100%',
-    padding: 10,
+    height: '100%',
+    padding: 2,
   },
+
+  title: {
+    fontWeight: 'bold',
+    fontFamily: 'sans-serif',
+    fontSize: 16,
+  },
+
   bottomNavigation: {
     width: '100%',
-    height: 30,
-    marginBottom: 10,
+    height: 20,
+    marginBottom: 5,
   },
   filterButttons: {
     flexDirection: 'row',
     justifyContent: 'space-around',
-    marginBottom: 12,
+    marginBottom: 5,
   },
   filterBtn: {
     width: 100,

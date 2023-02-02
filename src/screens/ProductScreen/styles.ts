@@ -6,6 +6,13 @@ const styles = StyleSheet.create({
       flex:1
 
     },
+    share:{
+  
+    },
+    favorite:{
+
+
+    },
     showrelatedbtn:{
       width:120,
       height:35,
@@ -23,7 +30,7 @@ const styles = StyleSheet.create({
     },
     orderText:{},
     orderButton:{
-      width:100,
+      width:480,
       height:25,
       borderRadius:20,
       backgroundColor:"pink",

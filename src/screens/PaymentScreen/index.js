@@ -11,11 +11,13 @@ const Payment = () => {
   return (
  
        <WebView
+        
+        startInLoadingState={true}
         originWhitelist={['*']}
         source={{ 
           uri: 'http://10.0.3.2:8000/api/v1/pay/',
           method: 'GET',
-          body:`orders=${orders}&dog=pug&fish=shark`
+          // body:`orders=${orders}&dog=pug&fish=shark`
       
       }}
       />

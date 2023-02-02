@@ -11,8 +11,9 @@ function AuthStack() {
       screenOptions={{
         headerShown: false,
       }}>
-      <Stack.Screen name="SignUp" component={SignupScreen} />
       <Stack.Screen name="Login" component={LoginScreen} />
+      <Stack.Screen name="SignUp" component={SignupScreen} />
+
       <Stack.Screen name="PasswordReset" component={PasswordReset} />
     </Stack.Navigator>
   );

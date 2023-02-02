@@ -5,7 +5,7 @@ export default Filters = ({ data, onValueChange }) => {
     const [selectedIndex, setSelectedIndex] = useState(-1);
   
     return (
-      <View style={{ flexDirection: 'row',justifyContent:'space-around',marginBottom:10 }}>
+      <View style={{ flexDirection: 'row',justifyContent:'space-around',marginBottom:5 }}>
         {data.map((x, i) => (
           <FilterButton
             text={x.title}
