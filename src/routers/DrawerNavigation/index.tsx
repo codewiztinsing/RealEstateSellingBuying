@@ -7,6 +7,7 @@ import AuthStack from '../AuthStack';
 import HomeStack from '../HomeStack';
 import OrderStack from '../OrderStack';
 import FavoriteStack from '../FavoriteStack';
+import Setting from '../../screens/SettingScreen';
 
 const Drawer = createDrawerNavigator();
 
@@ -61,6 +62,15 @@ const DrawerNavigator = ({navigation}) => {
         }}
         name="FavoriteStack"
         component={FavoriteStack}
+      />
+
+
+<Drawer.Screen
+        options={{
+          headerShown: false,
+        }}
+        name="Setting"
+        component={Setting}
       />
     </Drawer.Navigator>
   );

@@ -27,8 +27,8 @@ export default function DrawerContent(props) {
             )}
             label="Login"
             onPress={() => {
-              props.navigation.navigate('Authorization',{
-                screen:"Login"
+              props.navigation.navigate('Authorization', {
+                screen: 'Login',
               });
             }}
           />
@@ -40,6 +40,16 @@ export default function DrawerContent(props) {
             label="Send Listing"
             onPress={() => {
               props.navigation.navigate('HomeStack', {screen: 'Listing'});
+            }}
+          />
+
+          <DrawerItem
+            icon={({color, size}) => (
+              <Icon name="home" color={color} size={size} />
+            )}
+            label="My listings"
+            onPress={() => {
+              props.navigation.navigate('HomeStack', {screen: 'Mylisting'});
             }}
           />
           <DrawerItem
@@ -80,8 +90,8 @@ export default function DrawerContent(props) {
           onPress={() => {
             setIsLoggedIn(false);
             setToken('');
-            navigation.navigate('Authorization',{
-              screen:"Login"
+            navigation.navigate('Authorization', {
+              screen: 'Login',
             });
           }}
         />
